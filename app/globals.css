@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  body {
+    @apply bg-background text-on-surface font-sans antialiased;
+  }
+
+  /* Material Symbols base sizing */
+  .material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+  }
+}
+
+@layer components {
+  /* Glassmorphism — navegación, modales, cards flotantes */
+  .glass-card {
+    background: rgba(20, 19, 18, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .glass-card-hover {
+    transition: all 0.3s ease;
+  }
+  .glass-card-hover:hover {
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+  }
+
+  /* Glow basado en luz en vez de sombras negras */
+  .primary-glow {
+    box-shadow: 0 0 20px rgba(255, 98, 34, 0.2);
+  }
+  .glow-hover:hover {
+    box-shadow: 0 0 20px rgba(255, 180, 155, 0.18);
+  }
+}
+
+@layer utilities {
+  /* Oculta scrollbar en carruseles horizontales */
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
